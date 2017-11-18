@@ -1,7 +1,5 @@
-
 # Termite colors
-(wal -R -t -a 70) > /dev/null
-
+(wal -R -e -t -a 70) > /dev/null
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -81,6 +79,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+EDITOR="/usr/bin/nvim"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -89,10 +89,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias node="nodejs"
+#alias node="nodejs"
 alias serato="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Serato/SeratoDJ/SeratoDJ.exe"
 alias vi="nvim"
 alias vim="nvim"
 alias neo="nvim"
-# don't do this
+
 zstyle ':omz:module:tmux' auto-start 'yes'

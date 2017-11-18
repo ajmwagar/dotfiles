@@ -11,7 +11,7 @@ margin-bottom = 5
 format-background = #0d000000
 
 [bar/traybar]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 25
 bottom = true
@@ -32,17 +32,18 @@ wm-restack = i3
 font-0 = Menlo for Powerline:pixelsize=12;0
 
 [bar/topbar1]
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 25
 offset-x = 0
-offset-y = 5
+offset-y = 0
+;offset-y = 5
 padding-right = 5
 padding-left = 5
 font-0 = Menlo for Powerline:pixelsize=12;0
 
-background = #00ffffff
-foreground = #F4D669
+background = #2E2A2A
+foreground = #E8D6D4
 ;foreground = ${xrdb:color7}
 ;background = ${xrdb:color16}
 
@@ -55,7 +56,7 @@ foreground = #F4D669
 modules-left = i3 title
 modules-center = date
 ;modules-right = battery temperature cpu memory volume
-modules-right = battery temperature cpu volume
+modules-right = temperature cpu volume
 
 override-redirect = true
 wm-restack = i3
