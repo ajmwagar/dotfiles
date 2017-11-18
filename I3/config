@@ -37,9 +37,9 @@ new_float normal 1
 bindsym $win+l exec ~/.config/i3/i3lock-fancy-multimonitor/lock
 
 # start a terminal
-bindsym $mod+Return exec urxvt -e tmux
+bindsym $mod+Return exec termite -e tmux
 #bindsym $mod+Shift+v exec st -e "nvim"
-#bindsym $mod+Return+t exec urxvt -c "zsh -c '. torsocks on'"
+#bindsym $mod+Return+t exec termite -c "zsh -c '. torsocks on'"
 
 # kill focused window
 bindsym $mod+Shift+q kill
