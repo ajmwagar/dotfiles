@@ -178,7 +178,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+period exec amixer -q sset Master 3%+
 bindsym $mod+comma exec amixer -q sset Master 3%-
 
-bindsym $mod+x exec bash -c blurlock 
+bindsym $mod+x exec sh ~/bin/scripts/blurrylock 
 #bindsym 2 exec xbacklight -inc 20
 #bindsym 1 exec xbacklight -dec 20
 
