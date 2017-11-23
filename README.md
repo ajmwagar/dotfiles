@@ -11,18 +11,18 @@
 # Setup Description #
 -----------------
 - Bar `polybar`
-- Browser `firefox`
+- Browser `chrome`
 - Compositor `compton`
 - IRC client `weechat`
-- File Manager `ranger`
-- Font `Iosevka`
+- File Manager `ranger/thunar`
+- Font `DejaVuSansMono Nerd Complete Mono`
 - Mail client `mutt`
 - Media player `mpv`
 - Music player `cmus`
 - Program launcher `rofi`
 - PDF viewer `zathura`
 - Text editor `vim`
-- Terminal emulator `urxvt-patched`
+- Terminal emulator `Termite`
 - Window manager `i3-gaps`
 
 # Installation #
@@ -45,16 +45,9 @@ ln ~/etc/ZSH/zshrc ~/.zshrc
 
 
 ### i3-gaps ###
-[[./I3/preview.png]]
+[](./I3/preview.png)
 
 ### rofi ###
-[[./ROFI/preview.png]]
+[](./ROFI/preview.png])
 
-### vivaldi  ### 
-[[./VIVALDI/preview.png]]
 
-### polybar ###
-[[./POLYBAR/preview.png]]
-
-### urxvt ###
-[[./URXVT/preview.png]]
