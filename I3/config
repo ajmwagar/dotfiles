@@ -188,23 +188,6 @@ gaps outer 30
 
 
 new_window 1pixel
-for_window [class="^.*"] border pixel 3
-
-bindsym $mod+n mode "class_1"
-
-set $bg-color            #0F101E
-set $bd-color            #F4D669
-set $inactive-bg-color   #383C4A
-set $inactive-bd-color   #F4D669
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-#                           border          background      text                 indicator  child border 
-client.focused              $bd-color       $bg-color       $text-color          $bd-color  $bd-color  
-client.unfocused            $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
-client.focused_inactive     $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
-client.urgent               $bg-color       $bg-color       $text-color          $bg-color  $bg-color
-client.background                           $bg-color
-
 
 # Auto start
 #exec --no-startup-id nitrogen --restore
