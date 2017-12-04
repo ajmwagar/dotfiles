@@ -38,22 +38,22 @@
 
 [frame]
     width = 0
-    color = "#2E2A2A"
+    color = "#07322B"
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#2E2A2A"
-    foreground = "#E8D6D4"
+    background = "#07322B"
+    foreground = "#4F5B47"
     timeout = 10
 
 [urgency_normal]
-    background = "#2E2A2A"
-    foreground = "#E8D6D4"
+    background = "#07322B"
+    foreground = "#4F5B47"
     timeout = 10
 
 [urgency_critical]
-    background = "#2E2A2A"
-    foreground = "#E8D6D4"
+    background = "#07322B"
+    foreground = "#4F5B47"
     timeout = 0
 
