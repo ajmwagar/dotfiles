@@ -164,7 +164,7 @@ bindsym $mod+x exec sh ~/bin/scripts/blurrylock
 gaps inner 10
 gaps outer 30
 
-new_window 1pixel
+# new_window 0pixel
 
 # Auto start
 exec wal -i ~/etc/I3/wallpaper16.jpg -a 70 -t
@@ -177,6 +177,5 @@ exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc
 # Mouse
 exec xmodmap -e "pointer = 3 2 1" 
 exec xmodmap -e ~/.xmodmap
-
 exec telegram-desktop
 exec slack
