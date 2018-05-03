@@ -97,3 +97,12 @@ alias vim="nvim"
 alias neo="nvim"
 
 zstyle ':omz:module:tmux' auto-start 'yes'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/ajmwagar/usr/dev/git/outrigger/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/ajmwagar/usr/dev/git/outrigger/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/ajmwagar/usr/dev/git/outrigger/node_modules/tabtab/.completions/sls.zsh ]] && . /home/ajmwagar/usr/dev/git/outrigger/node_modules/tabtab/.completions/sls.zsh

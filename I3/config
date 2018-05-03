@@ -14,7 +14,7 @@ set $win mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font knack nerd font:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -33,12 +33,8 @@ hide_edge_borders both
 new_window pixel 0
 new_float normal 1
 
-
 # start a terminal
-bindsym $mod+Return exec termite -e tmux
-bindsym $mod+Shift+s exec termite -e ssh ajmwagar@ajmwagar-desktop
-#bindsym $mod+Shift+v exec st -e "nvim"
-#bindsym $mod+Return+t exec termite -c "zsh -c '. torsocks on'"
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -76,10 +72,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+- split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+g split h;exec notify-send "Tiling Horizontally"
+bindsym $mod+v split v;exec notify-send "Tiling Vertically"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -92,25 +86,6 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+d focus child
-
-#set $workspace1  " I "
-#set $workspace2  " II "
-#set $workspace3  " III "
-#set $workspace4  " IV "
-#set $workspace5  " V "
-#set $workspace6  " VI "
-#set $workspace7  " VII "
-#set $workspace8  " VII "
-#set $workspace9  " IX "
-#set $workspace10 ": X "
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -152,54 +127,56 @@ mode "resize" {
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
   bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+bindsym j resize grow height 10 px or 10 ppt
+bindsym k resize shrink height 10 px or 10 ppt
+bindsym l resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-bindsym $mod+period exec amixer -q sset Master 3%+
-bindsym $mod+comma exec amixer -q sset Master 3%-
+# Pulse Audio Controls
+# bindsym $mod+period exec amixer -q sset Master 3%+
+# bindsym $mod+comma  exec amixer -q sset Master 3%-
+bindsym XF86AudioMute        exec amixer -q sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
+
 
 bindsym $mod+x exec sh ~/bin/scripts/blurrylock 
-#bindsym 2 exec xbacklight -inc 20
-#bindsym 1 exec xbacklight -dec 20
+# bindsym 2 exec xbacklight -inc 20
+# bindsym 1 exec xbacklight -dec 20
 
 
 # Setup gaps
 gaps inner 10
 gaps outer 30
 
-
 new_window 1pixel
 
 # Auto start
-#exec --no-startup-id nitrogen --restore
-exec wal -i ~/etc/I3/wallpaper14.jpg -a 70 -t
+exec wal -i ~/etc/I3/wallpaper16.jpg -a 70 -t
 exec sh /home/ajmwagar/run_polybar.sh
+
 exec --no-startup-id nm-applet
-#exec --no-startup-id blueman-manager
-#exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 exec --no-startup-id xflux -z 98199
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
-exec --no-startup -d syndaemon -i 1 -K -dp
+# Mouse
+exec xmodmap -e "pointer = 3 2 1" 
+exec xmodmap -e ~/.xmodmap
+
 exec telegram-desktop
 exec slack
-#exec --no-startup-id /bin/sh -c "/home/ajmwagar/etc/disabletouchpad.sh"
