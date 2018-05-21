@@ -39,6 +39,9 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lookup doc
+bindsym $mod+z exec zeal
+
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show combi -modi combi  -lines 10 -matching fuzzy -color-enabled
 bindsym $mod+o exec rofi -show drun  -modi drun  -lines 10 -matching fuzzy -color-enabled -show-icons
@@ -167,15 +170,18 @@ gaps outer 30
 # new_window 0pixel
 
 # Auto start
-exec wal -i ~/etc/I3/wallpaper16.jpg -a 70 -t
+exec wal -i ~/etc/I3/y0aqAsefkHBVnKOQN1G7Gj8FzZ-A12p-WBc3MyQOPmw.jpg -a 70 -t
+# exec nitrogen --restore
 exec sh /home/ajmwagar/run_polybar.sh
 
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id xflux -z 98199
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
+exec synergys -f
 # Mouse
 exec xmodmap -e "pointer = 3 2 1" 
 exec xmodmap -e ~/.xmodmap
 exec telegram-desktop
 exec slack
+exec zeal
