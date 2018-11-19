@@ -30,8 +30,13 @@ font knack nerd font:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 hide_edge_borders both
-new_window pixel 0
+new_window pixel 5
 new_float normal 1
+
+new_window 1pixel
+for_window [class="^.*"] border pixel 4
+
+
 
 # start a terminal
 bindsym $mod+Return exec alacritty 
@@ -129,7 +134,7 @@ mode "resize" {
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-  bindsym h resize shrink width 10 px or 10 ppt
+bindsym h resize shrink width 10 px or 10 ppt
 bindsym j resize grow height 10 px or 10 ppt
 bindsym k resize shrink height 10 px or 10 ppt
 bindsym l resize grow width 10 px or 10 ppt
@@ -162,6 +167,22 @@ bindsym $mod+x exec sh ~/bin/scripts/blurrylock
 # bindsym 2 exec xbacklight -inc 20
 # bindsym 1 exec xbacklight -dec 20
 
+set $bg-color            #2C323B
+set $bd-color            #9A94BC
+set $inactive-bg-color   #383C4A
+set $inactive-bd-color   #F4D669
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+
+
+# Setup borders
+client.focused              $bd-color       $bg-color       $text-color          $bd-color  $bd-color  
+client.unfocused            $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
+client.focused_inactive     $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
+client.urgent               $bg-color       $bg-color       $text-color          $bg-color  $bg-color
+client.background                           $bg-color
+
+
 
 # Setup gaps
 gaps inner 10
@@ -169,12 +190,22 @@ gaps outer 30
 
 # new_window 0pixel
 
+# Force floating
+for_window [class="Unity" instance="file_progress"] floating enable
+
+
 # Auto start
-exec wal -i ~/etc/I3/y0aqAsefkHBVnKOQN1G7Gj8FzZ-A12p-WBc3MyQOPmw.jpg -a 70 -t
+#exec wal -i ~/etc/I3/vapor.jpg -t
+# exec xwinwrap -g 1920x1080 -ni -s -nf -b -un -argb -sh rectangle -fdt -- gifview -w WID -a /users/ajmwagar/etc/i3/freemeals.gif
+# exec DISPLAY=:0.0 feh --bg-scale ~/etc/I3/yos.jpg
+# exec DISPLAY=:0.1 feh --bg-scale ~/etc/I3/619004-1920x1080-[DesktopNexus.com].jpg
+# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID ~/etc/I3/freemeals.gif -a"
+exec_always --no-startup-id "feh --bg-center /home/ajmwagar/Downloads/cold-dawn-fog-718857.jpg"
+
 # exec nitrogen --restore
 exec sh /home/ajmwagar/run_polybar.sh
 
-exec --no-startup-id nm-applet
+exec nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id xflux -z 98199
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
@@ -185,3 +216,6 @@ exec xmodmap -e ~/.xmodmap
 exec telegram-desktop
 exec slack
 exec zeal
+
+
+
