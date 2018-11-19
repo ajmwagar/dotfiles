@@ -11,7 +11,8 @@ margin-bottom = 5
 format-background = #0d000000
 
 [bar/traybar]
-monitor = ${env:MONITOR:eDP1}
+;monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 25
 bottom = true
@@ -19,8 +20,8 @@ bottom = true
 background = #00ffffff
 foreground = #00ffffff
 
-modules-left =
-modules-center = date
+modules-left = 
+modules-center = date 
 modules-right =
 
 tray-position = right
@@ -29,33 +30,45 @@ tray-transparent = true
 
 override-redirect = true
 wm-restack = i3
-font-0 = Menlo for Powerline:pixelsize=12;0
 
 [bar/topbar1]
-monitor = ${env:MONITOR:eDP1}
-width = 100%
-height = 25
-offset-x = 0
-offset-y = 5
+
+
+font-0 = Curie
+font-1 = Siji:stlye=Regular
+font-2 = Knack Nerd Font:pixelsize=8;1
+font-3 = "Font Awesome:style=Regular:pixelsize=8;1"
+;font-3 = "Font Awesome:style=Regular"
+;font-4 = "Font Awesome 5 Free, Font Awesome 5 Brands:pixelsize=8;1"
+
+monitor = ${env:MONITOR:DVI-D-0}
+width = 94%
+height = 33
+offset-x = 3%
+offset-y = 4
 padding-right = 5
 padding-left = 5
-font-0 = Menlo for Powerline:pixelsize=12;0
 
-background = #00ffffff
-foreground = #F4D669
+; Rounded corners
+radius-top = 5.0
+radius-bottom = 5.0
+
+background = #4B5A5A
+transparent= false
+foreground = #E3E2E1
 ;foreground = ${xrdb:color7}
 ;background = ${xrdb:color16}
 
+;tray-position = right
+;tray-padding = 5
+;tray-transparent = false
+;tray-background = #4B5A5A
 
-;font-0 = Source Sans Pro:pixelsize=12;1
-;font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-;font-2 = siji:pixelsize=10;0
-;font-3 = FontAwesome:pixelsize=14;0
 
-modules-left = i3 title
+modules-left = i3 
 modules-center = date
-;modules-right = battery temperature cpu memory volume
-modules-right = battery temperature cpu volume
+modules-right = volume battery poweroff
+
 
 override-redirect = true
 wm-restack = i3
@@ -75,10 +88,6 @@ padding-left = 5
 background = #0000000
 ;foreground = #ffffff
 
-font-0 = Source Sans Pro:pixelsize=12;1
-font-1 = unifont:size=6:heavy:fontformat=truetype;-2
-font-2 = siji:pixelsize=10;0
-font-3 = FontAwesome:pixelsize=14;0
 
 ;modules-left = i3 title
 ;modules-center = date
@@ -103,18 +112,23 @@ label-mode-padding = 2
 ;label-unfocused-padding = 1
 ;label-visible-foregroud = #07322B
 ;label-visible-padding = 1
-;label-focused-foreground = #475544
+;label-focused-foreground = #9A94BC
 ;label-focused-padding = 1
 ;label-urgent-padding = 1
 
-; ws-icon-[0-9]+ = label;icon
+;ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
-;ws-icon-0 = 1;♚
-;ws-icon-1 = 2;♛
-;ws-icon-2 = 3;♜
-;ws-icon-3 = 4;♝
-;ws-icon-4 = 5;♞
-;ws-icon-default = ♟
+ws-icon-0 = "1;" 
+; 
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -126,7 +140,7 @@ format = <label-state> <label-mode>
 ; Default: %mode%
 label-mode = %mode%
 ;label-mode-padding = 2
-label-mode-background = #e60053
+label-mode-background = #9A94BC
 
 ; Available tokens:
 ;   %name%
@@ -134,9 +148,9 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused = %index%
+label-focused = %name% %icon%
 ;label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
+label-focused-background = #9A94BC
 label-focused-underline = #fba922
 label-focused-padding = 2
 
@@ -145,7 +159,7 @@ label-focused-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-unfocused = %index%
+label-unfocused = %index% %icon%
 label-unfocused-padding = 2
 
 ; Available tokens:
@@ -153,7 +167,7 @@ label-unfocused-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-visible = %index%
+label-visible = %index% %icon%
 label-visible-underline = #555555
 label-visible-padding = 2
 
@@ -162,29 +176,30 @@ label-visible-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = %index%
+label-urgent = %index% %icon%
 label-urgent-padding = 2
 
 [module/date]
 type = internal/date
 interval = 5
 
+icon = "  "
 date = "%m/%d/%y"
 date-alt = " %d"
 
 time = " %H:%M"
 time-alt =  %H:%M
 
-label = %date% %time%
+label =  %time%
 
 [module/volume]
+label-padding = 7
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
-label-volume = " "
+label-volume = "  "
 label-volume-foreground = ${root.foreground}
-label-muted = muted
 
+bar-volume-padding = 10
 bar-volume-width = 10
 bar-volume-gradient = true
 bar-volume-indicator = |
@@ -193,6 +208,40 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <bar-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = muted
+label-muted-padding = 2
+label-muted-foreground = #66
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; If defined, it will replace <ramp-volume> when
+; headphones are plugged in to `headphone_control_numid`
+; If undefined, <ramp-volume> will be used for both
+; Only applies if <ramp-volume> is used
+ramp-headphones-0 = 
+ramp-headphones-1 = 
 
 [module/memory]
 type = internal/memory
@@ -220,13 +269,13 @@ format-foregroud = #4F5B47
 
 [module/wireless-network]
 type = internal/network
-interface = enp0s20f0u1
+interface = wlp1s0
 
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 
-label-connected = %essid% %downspeed:9%
+label-connected = %essid% 
 
 label-disconnected = not connected
 
@@ -237,9 +286,10 @@ type = internal/battery
 full-at = 99
 
 ; Use the following command to list batteries and adapters:
-; $ ls -1 /sys/class/power_supply/
-battery = BAT0
+; $ ls -1 /sys/class/power_supply/ 
+battery = BAT0 
 adapter = ADP1
+
 
 ; If an inotify event haven't been reported in this many
 ; seconds, manually poll for new values.
@@ -251,3 +301,113 @@ adapter = ADP1
 ;
 ; Default: 5
 poll-interval = 5
+
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 5
+label-connected = %essid%  
+
+[module/wlan2]
+inherit = module/wlan
+interface = wlp1s0
+
+
+[module/github]
+type = internal/github
+label-padding = 2
+
+; Accessing an access token stored in file
+token = ${file:/home/ajmwagar/etc/POLYBAR/access.token}
+
+; Accessing an access token stored in an environment variable
+
+; Whether empty notifications should be displayed or not
+empty-notifications = false
+
+
+; Number of seconds in between requests
+interval = 10
+
+; Available tags:
+;   <label> (default)
+format = <label>
+
+; Available tokens:
+;   %notifications% (default)
+; Default: Notifications: %notifications%
+label = %notifications%     
+label-spacing = 20
+
+[module/poweroff]
+type = custom/script
+exec = echo "   ⏻"
+click-left = exec shutdown 0
+
+
+[module/weather]
+type = custom/script
+exec = weather-bar | rg "°F"
+
+tail = true 
+
+
