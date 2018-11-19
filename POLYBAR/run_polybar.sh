@@ -14,6 +14,7 @@ killall -q polybar
 
 # Launch bar1 and bar2
 #polybar base &
-  polybar --reload base -c ~/.polybar  &
+  polybar --reload topbar1 -c ~/.polybar  &
+  polybar --reload topbar2 -c ~/.polybar  &
   polybar -c ~/.polybar --reload traybar &
 
