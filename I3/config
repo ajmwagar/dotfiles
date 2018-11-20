@@ -205,11 +205,11 @@ client.background                           $bg-color
 
 # betterlockscreen -u ~/etc/I3/wallpaper3.jpg
 # bindsym $mod+x exec betterlockscreen -l
-bindsym $mod+x exec i3lock -i ~/etc/I3/wallpaper3.jpg
+bindsym $mod+x exec i3lock -i ~/etc/I3/wallpaper3.png
 
 # Auto start
 exec --no-startup-id feh /home/ajmwagar/etc/I3/wallpaper3.jpg --bg-scale
-exec --no-startup-id compton
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id sh /home/ajmwagar/run_polybar.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
