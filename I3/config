@@ -11,8 +11,8 @@
 
 set $mod mod1
 set $win Mod4
-set $term alacritty
-# set $term kitty 
+# set $term alacritty
+set $term kitty 
 # set $term gnome-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -21,7 +21,7 @@ set $term alacritty
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font Curie 8
+font Fira Code
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -39,18 +39,25 @@ new_float normal 1
 
 # start a terminal
 bindsym $mod+Return exec $term
+# start a nvim session
+bindsym $mod+n exec $term nvim
+# open todo list
+bindsym $mod+t exec $term nvim ~/todo/todo.txt
+
 # --config ~/.config/kitty/kitty.conf
 
 bindsym $mod+Shift+s exec --no-startup-id /home/ajmwagar/bin/scripts/switchoutput.sh
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+z exec zeal
-bindsym $mod+c exec scrot
+bindsym $mod+PrintScr exec scrot
 
 # rofi
 bindsym $mod+o exec rofi -show drun -lines 10 -matching fuzzy -color-enabled -show-icons
 bindsym exec rofi -show drun -lines 10 -matching fuzzy -color-enabled -show-icons
-bindsym $mod+Tab exec rofi -show window -lines 5
+# bindsym $mod+Tab exec rofi -show window -lines 5
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 #i3 uses jkl; instead of hjkl -- fix that
 bindsym $mod+h focus left
@@ -77,7 +84,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+- split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -181,13 +188,13 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Setup gaps
+# smart_gaps inverse_outer
 gaps inner 20
-gaps outer 40
+gaps outer 30
 
 
 new_window 1pixel
 for_window [class="^.*"] border pixel 4
-
 
 set $bg-color            #2C323B
 set $bd-color            #9A94BC
@@ -205,16 +212,17 @@ client.background                           $bg-color
 
 # betterlockscreen -u ~/etc/I3/wallpaper3.jpg
 # bindsym $mod+x exec betterlockscreen -l
-bindsym $mod+x exec i3lock -i ~/etc/I3/wallpaper3.png
+bindsym $mod+x exec i3lock -i ~/etc/I3/london-scaled.png
 
 # Auto start
-exec --no-startup-id feh /home/ajmwagar/etc/I3/wallpaper3.jpg --bg-scale
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+exec --no-startup-id feh /home/ajmwagar/etc/I3/city.jpg --bg-scale
+exec --no-startup-id compton
 exec --no-startup-id sh /home/ajmwagar/run_polybar.sh
-exec --no-startup-id dunst
+exec --no-startup-id dunst -conf /home/ajmwagar/etc/DUNST/dunstrc
+exec --no-startup-id batterup # github.com/ajmwagar/batterup
 exec --no-startup-id nm-applet
-exec --no-startup-id bliuetooh-applet
-exec --no-startup-id xflux -z 98199
+exec --no-startup-id bluetooh-applet
+# exec --no-startup-id xflux -z 98199
 exec --no-startup-id xmodmap /home/ajmwagar/.xmodmap
 exec --no-startup-id syndaemon -i 1 -K -dp
 #exec --no-startup-id synergyc ajmwagar-desktop
