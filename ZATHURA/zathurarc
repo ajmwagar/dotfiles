@@ -17,7 +17,8 @@ set scroll-step 100
 #zoom settings
 
 set default-bg "#0F101E"
-set default-fg "#F4D669"
+# set default-fg "#F4D669"
+set default-fg "#DDDDDD"
 
 set inputbar-bg "#0F101E"
 
