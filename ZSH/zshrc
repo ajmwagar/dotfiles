@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-EDITOR="/usr/bin/nvim"
+EDITOR="/usr/local/bin/nvim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -95,12 +95,14 @@ EDITOR="/usr/bin/nvim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias schl="cd ~/school"
 alias t="todo.sh"
 alias vi="nvim"
 alias vim="nvim"
 alias neo="nvim"
 alias ws="cd ~/usr/dev/git/"
 alias fpl="cd ~/usr/dev/git/FPL"
+alias jrnl="nvim ~/school/LA/journal.md ~/school/Chem/journal.md ~/school/History/journal.md ~/school/Algebra/journal.md"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
