@@ -1,0 +1,8 @@
+[options]
+;font = DejaVuSansMono Nerd Complete Mono 
+;font = xos4 Terminus 12px
+;font = Droid Sans Mono 8
+font = Knack Nerd Font
+
+[colors]
+background = rgba(15, 16, 30, 0.7)

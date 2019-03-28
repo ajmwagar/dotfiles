@@ -1,0 +1,437 @@
+; rn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+format-background = #0d000000
+
+[bar/traybar]
+;monitor = ${env:MONITOR:DVI-D-0}
+width = 100%
+height = 25
+bottom = true
+
+background = #00ffffff
+foreground = #00ffffff
+
+modules-left = 
+modules-center = date 
+modules-right =
+
+tray-position = right
+tray-padding = 5
+tray-transparent = true
+
+override-redirect = true
+wm-restack = i3
+
+[bar/topbar1]
+
+
+font-0 = Curie:pixelsize=8
+font-1 = Fira Code:style=Regular:pixelsize=8
+font-2 = Knack Nerd Font:pixelsize=8;1
+font-3 = "FontAwesome:style=Regular:pixelsize=8;1"
+;font-3 = "Font Awesome:style=Regular"
+;font-4 = "Font Awesome 5 Free, Font Awesome 5 Brands:pixelsize=8;1"
+
+;monitor = ${env:MONITOR:DVI-D-0}
+width = 94%
+height = 33
+offset-x = 3%
+offset-y = 4
+padding-right = 5
+padding-left = 5
+
+; Rounded corners
+radius-top = 5.0
+radius-bottom = 5.0
+
+background = #4B5A5A
+transparent= false
+foreground = #E3E2E1
+;foreground = ${xrdb:color7}
+;background = ${xrdb:color16}
+
+;tray-position = right
+;tray-padding = 5
+;tray-transparent = false
+;tray-background = #4B5A5A
+
+
+modules-left = i3 
+modules-center = date
+modules-right = volume battery poweroff
+
+
+override-redirect = true
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[bar/topbar2]
+
+
+font-0 = Curie
+font-1 = Siji:stlye=Regular
+font-2 = Knack Nerd Font:pixelsize=8;1
+font-3 = "Font Awesome:style=Regular:pixelsize=8;1"
+;font-3 = "Font Awesome:style=Regular"
+;font-4 = "Font Awesome 5 Free, Font Awesome 5 Brands:pixelsize=8;1"
+
+monitor = ${env:MONITOR:DP-4}
+width = 94%
+height = 33
+offset-x = 3%
+offset-y = 4
+padding-right = 5
+padding-left = 5
+
+; Rounded corners
+radius-top = 5.0
+radius-bottom = 5.0
+
+background = #4B5A5A
+transparent= false
+foreground = #E3E2E1
+;foreground = ${xrdb:color7}
+;background = ${xrdb:color16}
+
+;tray-position = right
+;tray-padding = 5
+;tray-transparent = false
+;tray-background = #4B5A5A
+
+
+modules-left = i3 
+modules-center = date
+modules-right = cpu temperature memory
+
+
+override-redirect = true
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[module/i3]
+type = internal/i3
+index-sort = true
+wrapping-scroll = true
+strip-wsnumbers = true
+pin-workspaces = true
+
+label-mode-padding = 2
+
+;label-unfocused-foreground = #07322B
+;label-unfocused-padding = 1
+;label-visible-foregroud = #07322B
+;label-visible-padding = 1
+;label-focused-foreground = #9A94BC
+;label-focused-padding = 1
+;label-urgent-padding = 1
+
+;ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+ws-icon-0 = "1;" 
+; 
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+;label-mode-padding = 2
+label-mode-background = #9A94BC
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %name% %icon%
+;label-focused-foreground = #ffffff
+label-focused-background = #9A94BC
+label-focused-underline = #fba922
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused = %index% %icon%
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %index% %icon%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %index% %icon%
+label-urgent-padding = 2
+
+[module/date]
+type = internal/date
+interval = 5
+
+icon = "  "
+date = "%m/%d/%y"
+date-alt = " %d"
+
+time = " %H:%M"
+time-alt =  %H:%M
+
+label = %date% %time%
+
+[module/volume]
+label-padding = 7
+type = internal/volume
+
+label-volume = "  "
+label-volume-foreground = ${root.foreground}
+
+bar-volume-padding = 10
+bar-volume-width = 10
+bar-volume-gradient = true
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <bar-volume> <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+label-muted = muted
+label-muted-padding = 2
+label-muted-foreground = #66
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; If defined, it will replace <ramp-volume> when
+; headphones are plugged in to `headphone_control_numid`
+; If undefined, <ramp-volume> will be used for both
+; Only applies if <ramp-volume> is used
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/memory]
+type = internal/memory
+label = %gb_used%/%gb_free%
+label-padding = 2
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = CPU %percentage%
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 0
+warn-temperature = 60
+label = TEMP %temperature%
+label-padding = 2
+
+[module/title]
+type = internal/xwindow
+label-maxlen = 20
+format-padding = 2
+format-foregroud = #4F5B47
+
+[module/wireless-network]
+type = internal/network
+interface = wlp1s0
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = <animation-packetloss> <label-connected>
+
+label-connected = %essid%      
+label-padding = 7
+padding-right = 2
+
+label-disconnected = not connected
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/ 
+battery = BAT0 
+adapter = ADP1
+
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-discharging = <ramp-capacity> <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default)
+label-full = Fully charged
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 5
+label-connected = %essid%  
+
+[module/wlan2]
+inherit = module/wlan
+interface = wlp1s0
+
+
+[module/github]
+type = internal/github
+label-padding = 2
+
+; Accessing an access token stored in file
+token = ${file:/home/ajmwagar/etc/POLYBAR/access.token}
+
+; Accessing an access token stored in an environment variable
+
+; Whether empty notifications should be displayed or not
+empty-notifications = false
+
+
+; Number of seconds in between requests
+interval = 10
+
+; Available tags:
+;   <label> (default)
+format = <label>
+
+; Available tokens:
+;   %notifications% (default)
+; Default: Notifications: %notifications%
+label = %notifications%     
+label-spacing = 20
+
+[module/poweroff]
+type = custom/script
+exec = echo "   ⏻"
+click-left = exec shutdown 0
+
+
+[module/weather]
+type = custom/script
+exec = weather-bar | rg "°F"
+
+tail = true 
+
+

@@ -1,0 +1,22 @@
+[2017-11-13 16:15:36] WeeChat 1.9.1 (compiled on Sep 23 2017 19:44:10)
+[2017-11-13 16:15:36] Reading configuration file sec.conf
+[2017-11-13 16:15:36] Reading configuration file weechat.conf
+[2017-11-13 16:15:36] Reading configuration file plugins.conf
+[2017-11-13 16:15:36] Reading configuration file charset.conf
+[2017-11-13 16:15:36] Reading configuration file logger.conf
+[2017-11-13 16:15:36] Reading configuration file exec.conf
+[2017-11-13 16:15:36] Reading configuration file trigger.conf
+[2017-11-13 16:15:36] Reading configuration file aspell.conf
+[2017-11-13 16:15:36] Reading configuration file alias.conf
+[2017-11-13 16:15:36] Reading configuration file fifo.conf
+[2017-11-13 16:15:36] Reading configuration file xfer.conf
+[2017-11-13 16:15:36] Reading configuration file irc.conf
+[2017-11-13 16:15:36] Reading configuration file relay.conf
+[2017-11-13 16:15:37] Reading configuration file colorize_nicks.conf
+[2017-11-13 16:15:37] Reading configuration file autosort.conf
+[2017-11-13 16:15:37] Writing configuration file autosort.conf
+[2017-11-13 16:15:37] Reading configuration file otr.conf
+[2017-11-13 16:15:37] Reading configuration file buffers.conf
+[2017-11-13 16:15:37] Reading configuration file script.conf
+[2017-11-13 16:15:37] irc: connecting to server chat.freenode.net/6697 (SSL)...
+[2017-11-13 19:41:17] irc: connecting to server chat.freenode.net/6697 (SSL)...

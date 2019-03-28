@@ -1,0 +1,35 @@
+
+# Zathura configuration file
+# See man `man zathurarc'
+
+# Open document in fit-width mode by default
+#set adjust-open "best-fit"
+
+set font DejaVuSansMono Nerd Complete Mono normal 11
+# One page per row by default
+#set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "false"
+set smooth-scroll "true"
+set scroll-step 100
+
+#zoom settings
+
+set default-bg "#0F101E"
+# set default-fg "#F4D669"
+set default-fg "#DDDDDD"
+
+set inputbar-bg "#0F101E"
+
+set tabbar-bg "#0F101E"
+
+set recolor "true"
+set recolor-lightcolor "#0F101E"
+set recolor-darkcolor "#F4D669"
+set recolor-reverse-video "true"
+set recolor-keephue "false"
+
+
+set render-loading "true"
+set scroll-step 50

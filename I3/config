@@ -10,15 +10,18 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod mod1
-set $win mod4
+set $win Mod4
+# set $term alacritty
+set $term kitty 
+# set $term gnome-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+# font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font Fira Code
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -33,23 +36,28 @@ hide_edge_borders both
 new_window pixel 0
 new_float normal 1
 
-#Locking
-bindsym $win+l exec ~/.config/i3/i3lock-fancy-multimonitor/lock
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+v exec st -e "nvim"
-#bindsym $mod+Return+t exec urxvt -c "zsh -c '. torsocks on'"
+bindsym $mod+Return exec $term
+# start a nvim session
+bindsym $mod+n exec $term nvim
+# open todo list
+bindsym $mod+t exec $term nvim ~/todo/todo.txt
 
+# --config ~/.config/kitty/kitty.conf
+
+bindsym $mod+Shift+s exec --no-startup-id /home/ajmwagar/bin/scripts/switchoutput.sh
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+z exec zeal
+bindsym $mod+PrintScr exec scrot
 
-# start dmenu (a program launcher)
-bindsym $mod+space exec rofi -show combi -modi combi  -lines 10 -matching fuzzy -color-enabled
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# rofi
+bindsym $mod+o exec rofi -show drun -lines 10 -matching fuzzy -color-enabled -show-icons
+bindsym exec rofi -show drun -lines 10 -matching fuzzy -color-enabled -show-icons
+# bindsym $mod+Tab exec rofi -show window -lines 5
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 #i3 uses jkl; instead of hjkl -- fix that
 bindsym $mod+h focus left
@@ -76,7 +84,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+- split h
+bindsym $mod+c split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -101,16 +109,16 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+d focus child
 
-#set $workspace1  " I "
-#set $workspace2  " II "
-#set $workspace3  " III "
-#set $workspace4  " IV "
-#set $workspace5  " V "
-#set $workspace6  " VI "
-#set $workspace7  " VII "
-#set $workspace8  " VII "
-#set $workspace9  " IX "
-#set $workspace10 ": X "
+set $workspace1  1
+set $workspace2  2
+set $workspace3  3
+set $workspace4  4
+set $workspace5  5
+set $workspace6  6
+set $workspace7  7
+set $workspace8  8
+set $workspace9  9
+set $workspace10 10
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -151,16 +159,16 @@ mode "resize" {
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
+bindsym h resize shrink width 10 px or 10 ppt
+bindsym j resize grow height 10 px or 10 ppt
+bindsym k resize shrink height 10 px or 10 ppt
+bindsym l resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -169,31 +177,53 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Audio keys
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 10%-
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-bindsym $mod+period exec amixer -q sset Master 3%+
-bindsym $mod+comma exec amixer -q sset Master 3%-
-
-#bindsym 2 exec xbacklight -inc 20
-#bindsym 1 exec xbacklight -dec 20
+# Brightness keys
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Setup gaps
-
-
-#gap_size 30
-gaps inner 10
+# smart_gaps inverse_outer
+gaps inner 20
 gaps outer 30
 
+
 new_window 1pixel
+for_window [class="^.*"] border pixel 4
 
+set $bg-color            #2C323B
+set $bd-color            #9A94BC
+set $inactive-bg-color   #383C4A
+set $inactive-bd-color   #F4D669
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
 
-exec --no-startup-id bash -c ~/run_polybar.sh
-exec --no-startup-id nitrogen --restore
+#                           border          background      text                 indicator  child border 
+client.focused              $bd-color       $bg-color       $text-color          $bd-color  $bd-color  
+client.unfocused            $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
+client.focused_inactive     $bg-color       $bg-color       $inactive-text-color $bg-color  $bg-color
+client.urgent               $bg-color       $bg-color       $text-color          $bg-color  $bg-color
+client.background                           $bg-color
+
+# betterlockscreen -u ~/etc/I3/wallpaper3.jpg
+# bindsym $mod+x exec betterlockscreen -l
+bindsym $mod+x exec i3lock -i ~/etc/I3/london-scaled.png
+
+# Auto start
+exec --no-startup-id feh /home/ajmwagar/etc/I3/city.jpg --bg-scale
+exec --no-startup-id compton
+exec --no-startup-id sh /home/ajmwagar/run_polybar.sh
+exec --no-startup-id dunst -conf /home/ajmwagar/etc/DUNST/dunstrc
+exec --no-startup-id batterup # github.com/ajmwagar/batterup
 exec --no-startup-id nm-applet
-exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
-exec --no-startup -d syndaemon -i 1 -K -dp
-exec --no-startup-id /bin/sh -c "/home/ajmwagar/etc/disabletouchpad.sh"
+exec --no-startup-id bluetooh-applet
+# exec --no-startup-id xflux -z 98199
+exec --no-startup-id xmodmap /home/ajmwagar/.xmodmap
+exec --no-startup-id syndaemon -i 1 -K -dp
+#exec --no-startup-id synergyc ajmwagar-desktop
+# exec zeal
