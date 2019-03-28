@@ -11,77 +11,90 @@ rofi.width: 50
 rofi.lines: 5
 rofi.columns: 2
 rofi.font: Curie 8
-rofi.bw: 0
-rofi.padding: 15
-rofi.eh: 1
-rofi.hide-scrollbar: true
+rofi.bw: 0 rofi.padding: 15 rofi.eh: 1 rofi.hide-scrollbar: true
 
 ! ------------------------------------------------------------------------------
 !  Colors
 ! ------------------------------------------------------------------------------
 
-#define base00 #212121
-#define base01 #303030
-#define base02 #353535
-#define base03 #4A4A4A
-#define base04 #B3B3B3
-#define base05 #C9C9C9
-#define base06 #DADADA
-#define base07 #FFFFFF
-#define base08 #F07178
-#define base09 #F78C6C
-#define base0A #FFCB6B
-#define base0B #C3E88D
-#define base0C #89DDFF
-#define base0D #82AAFF
-#define base0E #C792EA
-#define base0F #FF5370
+/* #define base00 #212121 */
+/* #define base01 #303030 */
+/* #define base02 #353535 */
+/* #define base03 #4A4A4A */
+/* #define base04 #B3B3B3 */
+/* #define base05 #C9C9C9 */
+/* #define base06 #DADADA */
+/* #define base07 #FFFFFF */
+/* #define base08 #F07178 */
+/* #define base09 #F78C6C */
+/* #define base0A #FFCB6B */
+/* #define base0B #C3E88D */
+/* #define base0C #89DDFF */
+/* #define base0D #82AAFF */
+/* #define base0E #C792EA */
+/* #define base0F #FF5370 */
 
 ! ------------------------------------------------------------------------------
 !  URxvt
 ! ------------------------------------------------------------------------------
 
-*foreground:   base05
-*background:   base00
-*cursorColor:  base05
-
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
-
-*color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15:      base07
-
-
+! Font
 URxvt.cursorBlink : 1
-URxvt.font        : xft:Iosevka Term:size=12
-URxvt.italicFont  : xft:Iosevka Term:style=italic:size=12
+URxvt.font        : xft:curie
+URxvt.italicFont  : xft:curie:style=italic
 
+! UI
 URxvt.lineSpace           : 0
 URxvt.letterSpace         : 0
 URxvt.scrollBar           : false
-URxvt.internalBorder      : 32
+URxvt.internalBorder      : 2
 URxvt.cursorUnderline     : false
-URxvt.geometry            : 70x35
-URxvt.thickness           : 5
+URxvt.geometry            : 140x40
+URxvt.thickness           : 1
 URxvt.titleBar            : false
 URxvt.intensityStyles     : false
 
 
+! Plugins
 URxvt.perl-ext-common : default,matcher,font-size
-URxvt.url-launcher    : firefox
+URxvt.url-launcher    : brave
 URxvt.matcher.button  : 1
+
+
+
+! Colors
+! hard contrast: *background: #1d2021
+i
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
+
+/* URxvt*background: 0x2C323B */
+/* URxvt*foreground: 0xeaeaea */
 
 ! ------------------------------------------------------------------------------
 ! 2bwm
