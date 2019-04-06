@@ -58,8 +58,8 @@ git clone https://github.com/ajmwagar/vimkampf.git ~/.config/nvim
 ### rofi
 ![rofi](./ROFI/preview.png)
 
-### polybar
-![polybar](./POLYBAR/preview.png)
+<!--### polybar
+![polybar](./POLYBAR/preview.png)-->
 
 ### alacritty
 ![alacritty](./ALACRITTY/preview.png)
