@@ -99,10 +99,15 @@ alias t="todo.sh"
 alias vi="nvim"
 alias vim="nvim"
 alias neo="nvim"
+alias loris="lori"
 hash -d ws=$HOME/usr/dev/git/
 hash -d fpl=$HOME/usr/dev/git/FPL
 hash -d s="/home/ajmwagar/usr/odrive/Google Drive/Shared with Me/School/School/Sophomore"
+hash -d hack=$HOME/usr/hack
 alias jrnl="nvim ~/school/LA/journal.md ~/school/Chem/journal.md ~/school/History/journal.md ~/school/Algebra/journal.md"
+alias ls="exa"
+alias l="exa -l"
+alias tree="exa --tree"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
