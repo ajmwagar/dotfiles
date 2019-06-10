@@ -14,9 +14,9 @@ export ZSH=/home/ajmwagar/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="miloshadzic"
 # ZSH_THEME="delta"
-ZSH_THEME='norm'
+# ZSH_THEME='norm'
 # ZSH_THEME="pie"
-# ZSH_THEME="ys"
+ZSH_THEME="ys"
 # ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -64,6 +64,7 @@ ZSH_THEME='norm'
 plugins=(git ssh zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cargo/env
 
 # User configuration
 
