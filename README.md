@@ -46,7 +46,7 @@ ln ~/etc/WAYBAR ~/.config/waybar # waybar
 ln ~/etc/ALACRITTY/alacritty.yml ~/.config/alacritty/alacritty.yml # alacritty
 
 # Neovim Config
-git clone https://github.com/ajmwagar/vimkampf.git ~/.config/nvim
+git clone https://github.com/ajmwagar/vim-conf.git ~/.config/nvim
 
 ```
 3. Profit!
