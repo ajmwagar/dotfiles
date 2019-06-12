@@ -16,8 +16,8 @@
 
 window:
   dimensions:
-    columns: 40
-    lines: 20
+    columns: 120
+    lines: 40
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
@@ -28,7 +28,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: none
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -56,50 +56,50 @@ draw_bold_text_with_bright_colors: true
 # * https://wiki.archlinux.org/index.php/font_configuration#Fontconfig_configuration
 # * file:///usr/share/doc/fontconfig/fontconfig-user.html
 # Font configuration (changes require restart)
-# font:
-#   # The normal (roman) font face to use.
-#   # Style can be specified to pick a specific face.
-#   normal:
-#     family: "Fira Code"
-#     # family: "Source Code Pro"
-#     style: Retina
-
-#   # The bold font face
-#   bold:
-#     family: "Fira Code"
-#     # family: "Source Code Pro"
-#     style: Bold
-
-#   # The italic font face
-#   italic:
-#     # family: "Fira Code"
-#     family: "Source Code Pro"
-#     style: "Medium Italic"
-
-#   # Point size of the font
-#   size: 6.0
 font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: "Curie"
+    family: "Input Mono Condensed"
     # family: "Source Code Pro"
     style: Retina
 
   # The bold font face
   bold:
-    family: "Curie"
+    family: "Input Mono Condensed"
     # family: "Source Code Pro"
     style: Bold
 
   # The italic font face
   italic:
-    # family: "Curie"
-    family: "Curie"
+    family: "Input Mono Condensed"
+    # family: "Source Code Pro"
     style: "Medium Italic"
 
   # Point size of the font
-  size: 6.0
+  size: 8.0
+# font:
+#   # The normal (roman) font face to use.
+#   # Style can be specified to pick a specific face.
+#   normal:
+#     family: "Curie"
+#     # family: "Source Code Pro"
+#     style: Retina
+
+#   # The bold font face
+#   bold:
+#     family: "Curie"
+#     # family: "Source Code Pro"
+#     style: Bold
+
+#   # The italic font face
+#   italic:
+#     # family: "Curie"
+#     family: "Curie"
+#     style: "Medium Italic"
+
+#   # Point size of the font
+#   size: 6.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

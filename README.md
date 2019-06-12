@@ -10,19 +10,19 @@
 
 # Setup Description
 -----------------
-- Bar `polybar`
+- Bar `waybar`
 - Browser `brave`
-- Compositor `compton`
+- Compositor `sway`
 - IRC client `weechat`
 - File Manager `thunar`
-- Font `Curie`
+- Font `Input Mono`
 - Media player `vlc`
 - Music player `spotify`
 - Program launcher `rofi`
 - PDF viewer `zathura`
 - Text editor `nvim`
 - Terminal emulator `alacritty`
-- Window manager `i3-gaps`
+- Window manager `sway`
 
 # Installation 
 ------------
@@ -42,7 +42,7 @@ ln ~/etc/COMPTON/compton.conf ~/.config/compton.conf
 ln ~/etc/I3/config ~/.i3/config # i3-gaps
 ln ~/etc/XRESOURCES ~/.Xresources # Xresources (rofi, urxvt, etc.)
 ln ~/etc/ZSH/zshrc ~/.zshrc # zsh (oh-my-zsh)
-ln ~/etc/POLYBAR/polybar ~/.polybar # polybar
+ln ~/etc/WAYBAR ~/.config/waybar # waybar
 ln ~/etc/ALACRITTY/alacritty.yml ~/.config/alacritty/alacritty.yml # alacritty
 
 # Neovim Config
@@ -52,14 +52,17 @@ git clone https://github.com/ajmwagar/vimkampf.git ~/.config/nvim
 3. Profit!
 
 
-### i3-gaps
-![i3](./I3/preview.png)
+### sway
+![swat](./img/vim.jpg)
 
 ### rofi
-![rofi](./ROFI/preview.png)
+![rofi](./img/rofi.jpg)
+
+### dunst
+![dunst](./img/clean.jpg)
 
 <!--### polybar
 ![polybar](./POLYBAR/preview.png)-->
 
-### alacritty
-![alacritty](./ALACRITTY/preview.png)
+<!--### alacritty
+![alacritty](./ALACRITTY/preview.png)-->
