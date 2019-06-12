@@ -1,9 +1,10 @@
 [global]
-    font = Source Sans Pro 10
+    font = Input Mono Condensed 10
     markup = yes
 
     format = "<b>%a:</b> %s\n%b"
     sort = yes
+    show_icons = left
     indicate_hidden = yes
     alignment = left
     bounce_freq = 0
@@ -20,7 +21,7 @@
     sticky_history = yes
     line_height = 0
 
-    separator_height = 0
+    separator_height = 1
 
     # padding between text and separator
     padding = 10
@@ -28,32 +29,32 @@
     # horizontal padding
     horizontal_padding = 10
 
-    separator_color = frame
+    separator_color = "#98C379"
     startup_notification = true
 
     dmenu = /usr/bin/dmenu -p dunst:
 
     # browser for opening urls in context menu
-    browser = chrome
+    browser = brave-beta
 
 [frame]
-    frame_width = 0
-    frame_color = "#4B5A5A"
+    frame_width = 4
+    frame_color = "#98C379"
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#4B5A5A"
-    foreground = "#9A94BC"
+    background = "#242a32"
+    foreground = "#98C379"
     timeout = 10
 
 [urgency_normal]
-    background = "#4B5A5A"
-    foreground = "#9A94BC"
+    background = "#242a32"
+    foreground = "#98C379"
     timeout = 10
 
 [urgency_critical]
-    background = "#4B5A5A"
-    foreground = "#9A94BC"
+    background = "#242a32"
+    foreground = "#98C379"
     timeout = 0
 

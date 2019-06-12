@@ -1,0 +1,202 @@
+// nvim:ft=json
+{
+  "layer": "top",
+    "position": "bottom",
+
+    "modules-left": [
+      "sway/workspaces",
+      "custom/left-arrow-green",
+      "sway/mode",
+      "custom/right-arrow-red",
+      "cpu",
+      "custom/left-arrow-red",
+      "custom/right-arrow-purple",
+      "memory",
+      "custom/left-arrow-purple"
+    ],
+    "modules-center": [
+      "custom/right-arrow-yellow",
+    "clock#1",
+    "custom/left-arrow-yellow",
+    "custom/right-arrow-yellow",
+    "clock#2",
+    "custom/left-arrow-yellow",
+    "custom/right-arrow-yellow",
+    "clock#3",
+    "custom/left-arrow-yellow"
+    ],
+    "modules-right": [
+    "custom/right-arrow-yellow",
+    "pulseaudio",
+    "custom/left-arrow-yellow",
+    "custom/right-arrow-green",
+    "custom/media",
+      "custom/left-arrow-green",
+    "custom/right-arrow-blue",
+    "network",
+    "custom/left-arrow-blue",
+    "custom/right-arrow-purple",
+    "battery"
+    /* "custom/left-arrow-purple",
+     "custom/right-arrow-green",
+     "tray" */
+    ],
+
+    "custom/right-arrow": {
+      "format": "\ue0be",
+      "tooltip": false
+    },
+    "custom/left-arrow": {
+      "format": "\ue0b8",
+      "tooltip": false
+    },
+
+    "custom/right-arrow-green": { "format": "\ue0be", "tooltip": false },
+    "custom/left-arrow-green": { "format": "\ue0b8", "tooltip": false },
+    "custom/right-arrow-purple": { "format": "\ue0be", "tooltip": false },
+    "custom/left-arrow-purple": { "format": "\ue0b8", "tooltip": false },
+    "custom/right-arrow-red": { "format": "\ue0be", "tooltip": false },
+    "custom/left-arrow-red": { "format": "\ue0b8", "tooltip": false },
+    "custom/right-arrow-yellow": { "format": "\ue0be", "tooltip": false },
+    "custom/left-arrow-yellow": { "format": "\ue0b8", "tooltip": false },
+    "custom/right-arrow-blue": { "format": "\ue0be", "tooltip": false },
+    "custom/left-arrow-blue": { "format": "\ue0b8", "tooltip": false },
+
+    "sway/workspaces": {
+      "disable-scroll": true,
+      "format": "{name} {icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "5": "",
+        "6": "",
+        "8": "",
+        "default": ""
+      }
+    },
+    "network": {
+      "interface": "wlp1s0",
+      "format": "{ifname}",
+      "format-wifi": "",
+      "format-ethernet": "{ifname} ",
+      "format-disconnected": "X", //An empty format will hide the module.
+      "tooltip-format": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "on-click": "swaymsg exec \"alacritty --title float --command nmtui-connect\"",
+      "max-length": 50
+    },
+
+    "clock#1": {
+      "format": "{:%a}",
+      "tooltip": false
+    },
+    "clock#2": {
+      "format": "{:%H:%M}",
+      "tooltip": false
+    },
+    "clock#3": {
+      "format": "{:%m-%d}",
+      "tooltip": false
+    },
+
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{icon}  {volume}%",
+      "format-muted": "MUTE",
+      "format-icons": {
+        "headphones": "",
+        "default": [
+          "",
+          ""
+        ]
+      },
+      "scroll-step": 5,
+      "on-click": "pamixer -t",
+      "on-click-right": "pavucontrol"
+    },
+    "memory": {
+      "interval": 5,
+      "format": "Mem {}%"
+    },
+    "cpu": {
+      "interval": 5,
+      "format": "CPU {usage:2}%"
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": " {icon} {capacity}% ",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "tray": {
+      "icon-size": 15
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "python3 /home/ajmwagar/etc/WAYBAR/mediaplayer.py 2> /dev/null" // Script in resources folder
+    }
+}
+
+/* { */
+/*   "layer": "top", */
+/*     "modules-left": ["sway/workspaces", "sway/mode"], */
+/*     "modules-center": ["sway/window"], */
+/*     "modules-right": ["network", "pulseaudio","battery", "clock"], */
+/*     "sway/window": { */
+/*       "max-length": 50 */
+/*     }, */
+/*     "pulseaudio": { */
+/*       "format": " {volume}% {icon} ", */
+/*       "format-bluetooth": " {volume}% {icon} ", */
+/*       "format-muted": "", */
+/*       "format-icons": { */
+/*           "headphones": "", */
+/*           "handsfree": "", */
+/*           "headset": "", */
+/*           "phone": "", */
+/*           "portable": "", */
+/*           "car": "", */
+/*           "default": ["", ""] */
+/*       }, */
+/*       "scroll-step": 1, */
+/*       "on-click": "pavucontrol" */
+/*     }, */
+/*     "sway/workspaces": { */
+/*       "format": "{name}   {icon}", */
+/*       "format-icons": { */
+/*         "1": "", */
+/*         "2": "", */
+/*         "3": "", */
+/*         "5": "", */
+/*         "6": "", */
+/*         "8": "", */
+/*         "default": "" */
+/*       } */
+/*     }, */
+/*     "battery": { */
+/*       "format": "{capacity}% {icon}", */
+/*       "format-icons": ["", "", "", "", ""] */
+/*     }, */
+/*     "clock": { */
+/*       "format-alt": "{:%a, %d. %b  %H:%M}" */
+/*     } */
+/* } */
