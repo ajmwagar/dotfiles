@@ -211,7 +211,7 @@ bar {
 output "*" bg /home/ajmwagar/etc/I3/fern.jpg fill
 # output * bg #eaeaea solid_color
 
-bindsym $mod+x exec swaylock -i ~/etc/I3/fern.jpg
+bindsym $mod+x exec swaylock -i ~/etc/I3/voltron_flat.jpeg
 
 # Auto start
 exec_always --no-startup-id dunst -conf /home/ajmwagar/etc/DUNST/dunstrc
