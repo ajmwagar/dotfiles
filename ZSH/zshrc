@@ -61,7 +61,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh zsh-syntax-highlighting)
+plugins=(git ) # ssh zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
@@ -109,6 +109,9 @@ alias jrnl="nvim ~/school/LA/journal.md ~/school/Chem/journal.md ~/school/Histor
 alias ls="exa"
 alias l="exa -l"
 alias tree="exa --tree"
+alias pls="sudo !!"
+alias plz="sudo !!"
+alias fuck="sudo !!"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

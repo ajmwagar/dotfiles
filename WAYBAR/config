@@ -76,7 +76,7 @@
       }
     },
     "network": {
-      "interface": "wlp1s0",
+      "interface": "wlp4s0",
       "format": "{ifname}",
       "format-wifi": "",
       "format-ethernet": "{ifname} ",
@@ -85,7 +85,7 @@
       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
       "tooltip-format-ethernet": "{ifname} ",
       "tooltip-format-disconnected": "Disconnected",
-      "on-click": "swaymsg exec \"alacritty --title float --command nmtui-connect\"",
+      "on-click": "swaymsg exec \"alacritty --title float --command nmtui\"",
       "max-length": 50
     },
 

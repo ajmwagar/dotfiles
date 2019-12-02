@@ -208,10 +208,14 @@ client.urgent               $bg-color       $bg-color       $text-color         
 bar {
     swaybar_command waybar
 }
+# output DP-1 pos -1920 0 res 1200x1920
+# output eDP1 pos 0 0 res 1920x1080
+# output "*" bg /home/ajmwagar/etc/I3/punked.jpg fill
 output "*" bg /home/ajmwagar/etc/I3/fern.jpg fill
+output "DP-1" transform 90
 # output * bg #eaeaea solid_color
 
-bindsym $mod+x exec swaylock -i ~/etc/I3/voltron_flat.jpeg
+bindsym $mod+x exec swaylock -i ~/etc/I3/fern.jpg
 
 # Auto start
 exec_always --no-startup-id dunst -conf /home/ajmwagar/etc/DUNST/dunstrc

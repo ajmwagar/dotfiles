@@ -61,7 +61,7 @@ font:
   # Style can be specified to pick a specific face.
   normal:
     family: "Input Mono Condensed"
-    # family: "Source Code Pro"
+    # family: "Cascadia Code"
     style: Retina
 
   # The bold font face
