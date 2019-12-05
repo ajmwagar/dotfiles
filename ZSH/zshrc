@@ -6,7 +6,7 @@
 export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.odrive-agent/bin/"
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ajmwagar/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Go
 # Set name of the theme to load. Optionally, if you set this to "random"
