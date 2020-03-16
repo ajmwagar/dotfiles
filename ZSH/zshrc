@@ -3,7 +3,7 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.odrive-agent/bin/"
+export PATH="${PATH}:/snap/bin:${HOME}/.local/bin/:${HOME}/.odrive-agent/bin/"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -61,7 +61,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh zsh-syntax-highlighting)
+plugins=(git github npm rust ripgrep)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
@@ -74,19 +74,13 @@ source $HOME/.cargo/env
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='vim'
-fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-EDITOR="/usr/local/bin/nvim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -101,18 +95,14 @@ alias vi="nvim"
 alias vim="nvim"
 alias neo="nvim"
 alias loris="lori"
-hash -d ws=$HOME/usr/dev/git/
-hash -d fpl=$HOME/usr/dev/git/FPL
-hash -d s="/home/ajmwagar/usr/odrive/Google Drive/Shared with Me/School/School/Sophomore"
-hash -d hack=$HOME/usr/hack
-alias jrnl="nvim ~/school/LA/journal.md ~/school/Chem/journal.md ~/school/History/journal.md ~/school/Algebra/journal.md"
+hash -d ws=$HOME/src/
+hash -d zw=$HOME/src/zw
 alias ls="exa"
 alias l="exa -l"
 alias tree="exa --tree"
+alias kubectl="microk8s.kubectl"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh --no-use" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-cd ~
+export VOLTA_HOME="/home/ajmwagar/.volta"
+grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
