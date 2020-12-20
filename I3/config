@@ -41,9 +41,11 @@ floating_modifier $mod
 bindsym $mod+Return exec $term
 # start a nvim session
 bindsym $mod+n exec glrnvim
-bindsym $mod+Shift+s exec --no-startup-id /home/ajmwagar/bin/scripts/switchoutput.sh
+bindsym $mod+Shift+s exec --no-startup-id $HOME/bin/scripts/switchoutput.sh
 bindsym $mod+z exec zeal
 bindsym $mod+Shift+q kill
+
+bindsym $mod+Shift+m exec --no-startup-id $HOME/etc/I3/send_to_primary
 
 # rofi
 bindsym $mod+o exec rofi -show drun -lines 10 -matching fuzzy -color-enabled -show-icons
@@ -206,17 +208,17 @@ client.urgent               $bg-color       $bg-color       $text-color         
 # client.background                           $bg-color
 
 bar {
-    swaybar_command waybar
+    # swaybar_command waybar
 }
-output "*" bg /home/ajmwagar/etc/I3/fern.jpg fill
+# output "*" bg $HOME/etc/I3/fern.jpg fill
 # output * bg #eaeaea solid_color
 
-bindsym $mod+x exec swaylock -i ~/etc/I3/fern.jpg
+bindsym $mod+x exec i3lock -i ~/etc/I3/london.png
 
 # Auto start
-exec_always --no-startup-id dunst -conf /home/ajmwagar/etc/DUNST/dunstrc
-exec --no-startup-id batterup # github.com/ajmwagar/batterup
-exec --no-startup-id odriveagent
-exec --no-startup-id jupyter notebook ~s
-exec --no-startup-id syndaemon -i 1 -K -dp
-exec --no-startup-id 'nm-applet --indicator'
+exec_always --no-startup-id dunst -conf $HOME/etc/DUNST/dunstrc
+exec_always --no-startup-id xrandr --output DP-1 --right-of eDP-1 --primary
+exec_always feh --bg-scale $HOME/etc/I3/fern.jpg 
+# && xrandr --output DP-1 --rotate r
+exec --no-startup-id 'nm-applet'
+# exec --no-startup-id batterup # github.com/ajmwagar/batterup

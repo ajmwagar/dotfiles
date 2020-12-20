@@ -10,7 +10,8 @@ rofi.fg: #98C379
 rofi.width: 50
 rofi.lines: 5
 rofi.columns: 2
-rofi.font: Input Sans Condensed 8
+/* rofi.font: Input Sans Condensed 8 */
+rofi.font: Curie 8
 rofi.bw: 0 rofi.padding: 15 rofi.eh: 1 rofi.hide-scrollbar: true
 
 ! ------------------------------------------------------------------------------
